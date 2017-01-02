@@ -1,8 +1,4 @@
 <?php
-
-$db = mysql_connect("localhost:3306", "root", "") or die("Couldn't Connect");
-
-<?php
 $dbhost = getenv("MYSQL_SERVICE_HOST");
 $dbport = getenv("MYSQL_SERVICE_PORT");
 $dbuser = getenv("MYSQL_USER");
