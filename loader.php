@@ -35,6 +35,7 @@ while($row = mysqli_fetch_assoc($query))
 
     //notice the '.' below.
     $values .= "<tr><td>".$value1."</td><td>".$value2."</td><td>".$value3."</td><td>".$value4."</td></tr>";
+	echo "<br>";
 }
 echo $values;
 
