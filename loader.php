@@ -25,7 +25,7 @@ if (mysqli_connect_errno())
 	
 	$query = mysqli_query($connection,"SELECT * from loadtable");
 $values = "";
-echo "<br>"
+echo "<br>";
 while($row = mysqli_fetch_assoc($query))
 {
     $value1 = $row['id'];
