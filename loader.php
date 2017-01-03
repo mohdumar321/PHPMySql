@@ -25,6 +25,7 @@ while($row = mysql_fetch_assoc($query))
     $values .= "<tr><td>".$value1."</td><td>".$value2."</td><td>".$value3."</td><td>".$value4."</td></tr>";
 }
 echo $values;
+echo $dbname;
 
 	
 }
