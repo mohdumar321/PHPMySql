@@ -5,14 +5,25 @@ $dbuser = getenv("MYSQL_USER");
 $dbpwd = getenv("MYSQL_PASSWORD");
 $dbname = getenv("MYSQL_DATABASE");
 echo $dbname;
-$connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
-if ($connection->connect_errno) {
+
+$connection=mysqli_connect($dbhost,$dbuser,$dbpwd,$dbname);
+
+/*if ($connection->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
-} else {
+}*/
+
+
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+
+ else {
     printf("Connected to the database");
 	
-	$query = mysqli_query("SELECT * from loadtable");
+	
+	$query = mysqli_query($connection,"SELECT * from loadtable");
 $values = "";
 while($row = mysqli_fetch_assoc($query))
 {
@@ -29,5 +40,5 @@ echo $values;
 
 	
 }
-$connection->close();
+mysqli_close($connection);
 ?>
