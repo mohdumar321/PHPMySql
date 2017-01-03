@@ -20,11 +20,12 @@ if (mysqli_connect_errno())
   }
 
  else {
-    printf("Connected to the database");
+    printf("Connected to the database : "+ $dbname);
 	
 	
 	$query = mysqli_query($connection,"SELECT * from loadtable");
 $values = "";
+echo "<br>"
 while($row = mysqli_fetch_assoc($query))
 {
     $value1 = $row['id'];
