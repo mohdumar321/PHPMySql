@@ -4,8 +4,7 @@ $dbport = getenv("MYSQL_SERVICE_PORT");
 $dbuser = getenv("MYSQL_USER");
 $dbpwd = getenv("MYSQL_PASSWORD");
 $dbname = getenv("MYSQL_DATABASE");
-echo $dbhost;
-echo $dbport;
+
 $connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 if ($connection->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
@@ -13,6 +12,8 @@ if ($connection->connect_errno) {
 } else {
     printf("Connected to the database");
 	echo "<br>To test the database, hit the loader.php URL";
+	echo $dbhost;
+	echo $dbport;
 }
 $connection->close();
 ?>
