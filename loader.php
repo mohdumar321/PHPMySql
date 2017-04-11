@@ -1,6 +1,6 @@
 <?php
-$dbhost = getenv("MYSQL_SERVICE_HOST");
-$dbport = getenv("MYSQL_SERVICE_PORT");
+$dbhost = getenv("EXTERNAL_MYSQL_SERVICE_SERVICE_HOST");
+$dbport = getenv("EXTERNAL_MYSQL_SERVICE_SERVICE_PORT");
 $dbuser = getenv("MYSQL_USER");
 $dbpwd = getenv("MYSQL_PASSWORD");
 $dbname = getenv("MYSQL_DATABASE");
@@ -23,7 +23,7 @@ if (mysqli_connect_errno())
     printf("Connected to the database : "+ $dbname);
 	
 	
-	$query = mysqli_query($connection,"SELECT * from loadtable");
+/*	$query = mysqli_query($connection,"SELECT * from loadtable");
 $values = "";
 echo "<br>";
 while($row = mysqli_fetch_assoc($query))
@@ -38,7 +38,7 @@ while($row = mysqli_fetch_assoc($query))
 	echo "<br>";
 }
 echo $values;
-
+*/
 
 	
 }
